@@ -1,4 +1,4 @@
-# CMPE283-assignment4
+# CMPE283-Assignment4
 
 NOTE – there is no coding required for this assignment. We are just running assignment 3 again in a different configuration.
 
@@ -19,20 +19,26 @@ Boot the same test VM again, and capture the same output as you did in step 2.
 
 Q) Include a sample of your print of exit count output from dmesg
 
-![Assignment-4-output](https://user-images.githubusercontent.com/71058994/102049657-27f9c080-3d96-11eb-9d78-b5a315b06d5d.jpeg)
+### The screenshots below shows the exit counts for all the exits supported by KVM.
+
+![Image1](./images/image1.png)
+![Image2](./images/image2.png)
+![Image3](./images/image3.png)
 
 
 ======================================================================================
 
 Q) What did you learn from the count of exits? Was the count what you expected? If not, why not? & What changed between the two runs (ept vs no-ept)?
 
-a) The count of exits have increased a lot compared to Nested Paging. 
+We observed the following difference between ept and no-ept exit counts.
 
-b) Exits due to page faults, CR3 changes, and explicit TLB invalidations are the obvious ones that would increase. 
+* The count of exits have increased a lot compared to Nested Paging. 
 
-c) We wouldn't expect any increase in exit causes unrelated to paging, such as interrupt exits. 
+* Exits due to page faults, CR3 in, CR3 out and explicit TLB invalidations are the obvious ones that would increase. 
 
-d) Guest page table modifications need not be trapped, hence VM exits reduced. Reduced memory footprint compared to shadow page table algorithms.
+* We wouldn't expect any increase in exit causes unrelated to paging, such as interrupt exits. 
+
+* Guest page table modifications need not be trapped, hence VM exits reduced. Reduced memory footprint compared to shadow page table algorithms.
 
 ======================================================================================
 
