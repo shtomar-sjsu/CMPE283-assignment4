@@ -40,6 +40,14 @@ We observed the following difference between ept and no-ept exit counts.
 
 * Guest page table modifications need not be trapped, hence VM exits reduced. Reduced memory footprint compared to shadow page table algorithms.
 
+* The top exit reason in nested paging were
+
+  * External interrupt
+  * CPUID
+  * HLT
+  * WRMSR
+  * CPT violation
+
 ======================================================================================
 
 1) Shivam Tomar(SJSU ID: 015218203) 
